@@ -15,7 +15,7 @@ jobs:
           mkdir -p $PWD/autotune
           git clone --branch remote_monitoring https://github.com/kruize/autotune.git $PWD/autotune
           cd autotune
-          git rev-parse --short=7 HEAD >> ../.commitsha
+          git rev-parse --short=7 HEAD > ../.commitsha
           cd ..
       - name: Do change if the digest changed
         run: |

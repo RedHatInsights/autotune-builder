@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  Kruize_Metrics.json: |-
+  kruize-metrics.json: |
     {
       "__inputs": [
         {
@@ -18,47 +18,15 @@ data:
           "type": "datasource",
           "pluginId": "prometheus",
           "pluginName": "Prometheus"
-        },
-        {
-          "name": "DS_TELEMETER-RECENT-PRODUCTION",
-          "label": "telemeter-recent-production",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
         }
       ],
       "__elements": {},
       "__requires": [
         {
-          "type": "panel",
-          "id": "alertlist",
-          "name": "Alert list",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "dashlist",
-          "name": "Dashboard list",
-          "version": ""
-        },
-        {
           "type": "grafana",
           "id": "grafana",
           "name": "Grafana",
           "version": "9.3.8"
-        },
-        {
-          "type": "panel",
-          "id": "graph",
-          "name": "Graph (old)",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "heatmap",
-          "name": "Heatmap",
-          "version": ""
         },
         {
           "type": "datasource",
@@ -70,18 +38,6 @@ data:
           "type": "panel",
           "id": "stat",
           "name": "Stat",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "table-old",
-          "name": "Table (old)",
-          "version": ""
-        },
-        {
-          "type": "panel",
-          "id": "text",
-          "name": "Text",
           "version": ""
         },
         {
@@ -3587,545 +3543,11 @@ data:
         },
         {
           "collapsed": true,
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PD776AFABBE26000A"
-          },
           "gridPos": {
             "h": 1,
             "w": 24,
             "x": 0,
             "y": 143
-          },
-          "id": 4,
-          "panels": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "gridPos": {
-                "h": 9,
-                "w": 20,
-                "x": 0,
-                "y": 118
-              },
-              "id": 28,
-              "links": [],
-              "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
-                },
-                "content": "# How to bulid a dashboard using this Playground\n\n## Full documentation on creating Dashboards\n\nhttps://gitlab.cee.redhat.com/service/app-interface/-/blob/master/docs/app-sre/monitoring.md#VisualizationwithGrafana\n\n## Getting started with the Playground dashboard\n\nBelow you wil find all available panels to be used for a dashboard.\n\nTo start, select a panel to use, and duplicate it (`Panel options > More > Duplicate`).\n\nDrag it to the top of the screen (above the Building blocks Row) and change the panel title, metrics, and any other settings as required.\n\n\n## Saving your dashboard to Grafana\n\nSince all dashboards are managed through source control, saving dashboards is not enabled.\n\nTo save your new dashboard, export it to a JSON file (through the options on the top right of the screen) and save it locally. You will now need to create a merge request to app-interface.\n\nPlease see: https://gitlab.cee.redhat.com/service/app-interface/-/blob/master/docs/app-sre/monitoring.md#adding-dashboards\n\n## Tips and Tricks\n\n* Keep the `Building blocks` Row as part of the dashboard in case you require changes in the future\n* Export the dashboard with the `Building blocks` Row collapsed\n* Group panels together using a Row object (you may find some below)\n\n\nGood luck!",
-                "mode": "markdown"
-              },
-              "pluginVersion": "9.3.8",
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Playground usage",
-              "type": "text"
-            },
-            {
-              "aliasColors": {},
-              "bars": false,
-              "dashLength": 10,
-              "dashes": false,
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "fieldConfig": {
-                "defaults": {
-                  "links": []
-                },
-                "overrides": []
-              },
-              "fill": 1,
-              "fillGradient": 0,
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 0,
-                "y": 127
-              },
-              "hiddenSeries": false,
-              "id": 2,
-              "legend": {
-                "avg": false,
-                "current": false,
-                "max": false,
-                "min": false,
-                "show": true,
-                "total": false,
-                "values": false
-              },
-              "lines": true,
-              "linewidth": 1,
-              "links": [],
-              "nullPointMode": "null",
-              "options": {
-                "alertThreshold": true
-              },
-              "percentage": false,
-              "pluginVersion": "9.3.8",
-              "pointradius": 5,
-              "points": false,
-              "renderer": "flot",
-              "seriesOverrides": [],
-              "spaceLength": 10,
-              "stack": false,
-              "steppedLine": false,
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "thresholds": [],
-              "timeRegions": [],
-              "title": "Graph",
-              "tooltip": {
-                "shared": true,
-                "sort": 0,
-                "value_type": "individual"
-              },
-              "type": "graph",
-              "xaxis": {
-                "mode": "time",
-                "show": true,
-                "values": []
-              },
-              "yaxes": [
-                {
-                  "format": "short",
-                  "logBase": 1,
-                  "show": true
-                },
-                {
-                  "format": "short",
-                  "logBase": 1,
-                  "show": true
-                }
-              ],
-              "yaxis": {
-                "align": false
-              }
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "mappings": [
-                    {
-                      "options": {
-                        "match": "null",
-                        "result": {
-                          "text": "N/A"
-                        }
-                      },
-                      "type": "special"
-                    }
-                  ],
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": null
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 5,
-                "y": 127
-              },
-              "id": 6,
-              "links": [],
-              "maxDataPoints": 100,
-              "options": {
-                "colorMode": "none",
-                "graphMode": "none",
-                "justifyMode": "auto",
-                "orientation": "horizontal",
-                "reduceOptions": {
-                  "calcs": [
-                    "mean"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "textMode": "auto"
-              },
-              "pluginVersion": "9.3.8",
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "SingleStat",
-              "type": "stat"
-            },
-            {
-              "columns": [],
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "fontSize": "100%",
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 10,
-                "y": 127
-              },
-              "id": 8,
-              "links": [],
-              "scroll": true,
-              "showHeader": true,
-              "sort": {
-                "col": 0,
-                "desc": true
-              },
-              "styles": [
-                {
-                  "alias": "Time",
-                  "align": "auto",
-                  "dateFormat": "YYYY-MM-DD HH:mm:ss",
-                  "pattern": "Time",
-                  "type": "date"
-                },
-                {
-                  "alias": "",
-                  "align": "auto",
-                  "colors": [
-                    "rgba(245, 54, 54, 0.9)",
-                    "rgba(237, 129, 40, 0.89)",
-                    "rgba(50, 172, 45, 0.97)"
-                  ],
-                  "decimals": 2,
-                  "pattern": "/.*/",
-                  "thresholds": [],
-                  "type": "number",
-                  "unit": "short"
-                }
-              ],
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Table",
-              "transform": "timeseries_to_columns",
-              "type": "table-old"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 15,
-                "y": 127
-              },
-              "id": 10,
-              "links": [],
-              "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
-                },
-                "content": "# title",
-                "mode": "markdown"
-              },
-              "pluginVersion": "9.3.8",
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Text",
-              "type": "text"
-            },
-            {
-              "cards": {},
-              "color": {
-                "cardColor": "#b4ff00",
-                "colorScale": "sqrt",
-                "colorScheme": "interpolateOranges",
-                "exponent": 0.5,
-                "mode": "spectrum"
-              },
-              "dataFormat": "timeseries",
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "fieldConfig": {
-                "defaults": {
-                  "custom": {
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "scaleDistribution": {
-                      "type": "linear"
-                    }
-                  }
-                },
-                "overrides": []
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 0,
-                "y": 134
-              },
-              "heatmap": {},
-              "hideZeroBuckets": false,
-              "highlightCards": true,
-              "id": 12,
-              "legend": {
-                "show": false
-              },
-              "links": [],
-              "options": {
-                "calculate": true,
-                "calculation": {},
-                "cellGap": 2,
-                "cellValues": {},
-                "color": {
-                  "exponent": 0.5,
-                  "fill": "#b4ff00",
-                  "mode": "scheme",
-                  "reverse": false,
-                  "scale": "exponential",
-                  "scheme": "Oranges",
-                  "steps": 128
-                },
-                "exemplars": {
-                  "color": "rgba(255,0,255,0.7)"
-                },
-                "filterValues": {
-                  "le": 1e-9
-                },
-                "legend": {
-                  "show": false
-                },
-                "rowsFrame": {
-                  "layout": "auto"
-                },
-                "showValue": "never",
-                "tooltip": {
-                  "show": true,
-                  "yHistogram": false
-                },
-                "yAxis": {
-                  "axisPlacement": "left",
-                  "reverse": false,
-                  "unit": "short"
-                }
-              },
-              "pluginVersion": "9.3.8",
-              "reverseYBuckets": false,
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Heatmap",
-              "tooltip": {
-                "show": true,
-                "showHistogram": false
-              },
-              "type": "heatmap",
-              "xAxis": {
-                "show": true
-              },
-              "yAxis": {
-                "format": "short",
-                "logBase": 1,
-                "show": true
-              },
-              "yBucketBound": "auto"
-            },
-            {
-              "dashboardFilter": "",
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 5,
-                "y": 134
-              },
-              "id": 14,
-              "limit": 10,
-              "links": [],
-              "nameFilter": "",
-              "onlyAlertsOnDashboard": false,
-              "options": {
-                "alertInstanceLabelFilter": "",
-                "alertName": "",
-                "dashboardAlerts": false,
-                "groupBy": [],
-                "groupMode": "default",
-                "maxItems": 20,
-                "sortOrder": 1,
-                "stateFilter": {
-                  "error": true,
-                  "firing": true,
-                  "noData": false,
-                  "normal": false,
-                  "pending": true
-                },
-                "viewMode": "list"
-              },
-              "show": "current",
-              "sortOrder": 1,
-              "stateFilter": [],
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Alert list",
-              "type": "alertlist"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 10,
-                "y": 134
-              },
-              "id": 16,
-              "links": [],
-              "options": {
-                "maxItems": 10,
-                "query": "",
-                "showHeadings": true,
-                "showRecentlyViewed": false,
-                "showSearch": false,
-                "showStarred": true,
-                "tags": []
-              },
-              "pluginVersion": "9.3.8",
-              "tags": [],
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Dashboard list",
-              "type": "dashlist"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-              },
-              "gridPos": {
-                "h": 7,
-                "w": 5,
-                "x": 15,
-                "y": 134
-              },
-              "id": 20,
-              "links": [],
-              "targets": [
-                {
-                  "datasource": {
-                    "type": "prometheus",
-                    "uid": "${DS_TELEMETER-RECENT-PRODUCTION}"
-                  },
-                  "refId": "A"
-                }
-              ],
-              "title": "Plugin list",
-              "type": "pluginlist"
-            }
-          ],
-          "targets": [
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "PD776AFABBE26000A"
-              },
-              "refId": "A"
-            }
-          ],
-          "title": "Building blocks",
-          "type": "row"
-        },
-        {
-          "collapsed": true,
-          "gridPos": {
-            "h": 1,
-            "w": 24,
-            "x": 0,
-            "y": 144
           },
           "id": 82,
           "panels": [
@@ -4191,7 +3613,7 @@ data:
                 "h": 9,
                 "w": 12,
                 "x": 0,
-                "y": 145
+                "y": 144
               },
               "id": 74,
               "options": {
@@ -4346,7 +3768,7 @@ data:
                 "h": 9,
                 "w": 12,
                 "x": 12,
-                "y": 145
+                "y": 144
               },
               "id": 76,
               "options": {
@@ -4494,8 +3916,8 @@ data:
       },
       "timezone": "",
       "title": "Kruize Metrics",
-      "uid": "playground",
-      "version": 1,
+      "uid": "kruizemetricsUx9248",
+      "version": 8,
       "weekStart": ""
     }
 kind: ConfigMap
@@ -4505,5 +3927,5 @@ metadata:
   labels:
     grafana_dashboard: "true"
   annotations:
-    grafana-folder: /grafana-dashboard-definitions/0
+    grafana-folder: /grafana-dashboard-definitions/Insights
 

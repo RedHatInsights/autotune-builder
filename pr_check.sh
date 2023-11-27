@@ -9,7 +9,7 @@ export COMPONENTS="autotune"
 export IMAGE="quay.io/cloudservices/autotune"
 AUTOTUNE_GIT_DIR="autotune"
 AUTOTUNE_GIT_DIR_PATH="$PWD/$AUTOTUNE_GIT_DIR"
-AUTOTUNE_GIT_BRANCH="remote_monitoring"
+AUTOTUNE_GIT_BRANCH="0.0.19"
 export DOCKERFILE="Dockerfile.autotune"
 
 

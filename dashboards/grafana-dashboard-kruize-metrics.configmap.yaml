@@ -977,7 +977,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${datasoure}"
+            "uid": "${datasource}"
           },
           "description": "",
           "fieldConfig": {

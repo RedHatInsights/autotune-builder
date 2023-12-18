@@ -891,7 +891,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "No.of calls to api  updateRecommendations",
+          "title": "No.of calls to api updateRecommendations",
           "type": "timeseries"
         },
         {
@@ -994,7 +994,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Total calls to api  updateRecommendations for an interval",
+          "title": "Total calls to api updateRecommendations for an interval",
           "type": "timeseries"
         },
         {
@@ -1199,7 +1199,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "No.of calls to api  updateResults",
+          "title": "No.of calls to api updateResults",
           "type": "timeseries"
         },
         {
@@ -1299,7 +1299,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "No.of calls to api  updateResults for an interval",
+          "title": "No.of calls to api updateResults for an interval",
           "type": "timeseries"
         },
         {
@@ -1425,7 +1425,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  addBulkResultsToDBAndFetchFailedResults",
+          "title": "Time (in s) taken by method addBulkResultsToDBAndFetchFailedResults",
           "type": "timeseries"
         },
         {
@@ -1517,7 +1517,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  addBulkResultsToDBAndFetchFailedResults",
+          "title": "No.of calls to method addBulkResultsToDBAndFetchFailedResults",
           "type": "timeseries"
         },
         {
@@ -1617,7 +1617,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  loadResultsByExperimentName",
+          "title": "Time (in s) taken by method loadResultsByExperimentName",
           "type": "timeseries"
         },
         {
@@ -1709,7 +1709,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  loadResultsByExperimentName",
+          "title": "No.of calls to method loadResultsByExperimentName",
           "type": "timeseries"
         },
         {
@@ -1809,7 +1809,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  addRecommendationToDB",
+          "title": "Time (in s) taken by method addRecommendationToDB",
           "type": "timeseries"
         },
         {
@@ -1901,7 +1901,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  addRecommendationToDB",
+          "title": "No.of calls to method addRecommendationToDB",
           "type": "timeseries"
         },
         {
@@ -2207,7 +2207,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  loadExperimentByName",
+          "title": "Time (in s) taken by method loadExperimentByName",
           "type": "timeseries"
         },
         {
@@ -2299,7 +2299,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  loadExperimentByName",
+          "title": "No.of calls to method loadExperimentByName",
           "type": "timeseries"
         },
         {
@@ -2399,7 +2399,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  loadRecommendationsByExperimentNameAndDate",
+          "title": "Time (in s) taken by method loadRecommendationsByExperimentNameAndDate",
           "type": "timeseries"
         },
         {
@@ -2491,7 +2491,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  loadRecommendationsByExperimentNameAndDate",
+          "title": "No.of calls to method loadRecommendationsByExperimentNameAndDate",
           "type": "timeseries"
         },
         {
@@ -2591,7 +2591,7 @@ data:
               "refId": "B"
             }
           ],
-          "title": "Time (in s) taken by method  addExperimentToDB",
+          "title": "Time (in s) taken by method addExperimentToDB",
           "type": "timeseries"
         },
         {
@@ -2683,7 +2683,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to method  addExperimentToDB",
+          "title": "No.of calls to method addExperimentToDB",
           "type": "timeseries"
         },
         {
@@ -2888,7 +2888,7 @@ data:
               "refId": "A"
             }
           ],
-          "title": "No.of calls to api  createExperiment",
+          "title": "No.of calls to api createExperiment",
           "type": "timeseries"
         },
         {

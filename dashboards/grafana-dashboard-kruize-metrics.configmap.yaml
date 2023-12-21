@@ -503,7 +503,7 @@ data:
           "targets": [
             {
               "editorMode": "code",
-              "expr": "sum(rate(container_cpu_usage_seconds_total{pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m]))",
+              "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"POD\",image!=\"\",pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m]))",
               "hide": false,
               "legendFormat": "kruize-recommendations total CPU usage",
               "range": true,
@@ -511,7 +511,7 @@ data:
             },
             {
               "editorMode": "code",
-              "expr": "sum(rate(container_cpu_cfs_throttled_seconds_total{pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m]))",
+              "expr": "sum(rate(container_cpu_cfs_throttled_seconds_total{container!=\"POD\",image!=\"\",pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m]))",
               "hide": false,
               "legendFormat": "kruize-recommendations total CPU throttled",
               "range": true,
@@ -619,7 +619,7 @@ data:
           "targets": [
             {
               "editorMode": "code",
-              "expr": "sum(container_memory_working_set_bytes{pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}) / 1024 / 1024",
+              "expr": "sum(container_memory_working_set_bytes{container!=\"POD\",image!=\"\",pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}) / 1024 / 1024",
               "hide": false,
               "legendFormat": "kruize-recommendations total memory usage (in MB)",
               "range": true,
@@ -3385,7 +3385,7 @@ data:
               "targets": [
                 {
                   "editorMode": "code",
-                  "expr": "sum(rate(container_cpu_usage_seconds_total{pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m])) by (pod)",
+                  "expr": "sum(rate(container_cpu_usage_seconds_total{container!=\"POD\",image!=\"\",pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}[1m])) by (pod)",
                   "hide": false,
                   "legendFormat": "__auto",
                   "range": true,
@@ -3500,7 +3500,7 @@ data:
               "targets": [
                 {
                   "editorMode": "code",
-                  "expr": "sum(container_memory_working_set_bytes{pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}) by (pod) / 1024 / 1024",
+                  "expr": "sum(container_memory_working_set_bytes{container!=\"POD\",image!=\"\",pod=~\"kruize-recommendations-[^-]*-[^-]*$\"}) by (pod) / 1024 / 1024",
                   "hide": false,
                   "legendFormat": "__auto",
                   "range": true,

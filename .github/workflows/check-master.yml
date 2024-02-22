@@ -13,7 +13,7 @@ jobs:
       - name: Check change
         run: |
           mkdir -p $PWD/autotune
-          git clone --branch 0.0.19 https://github.com/kruize/autotune.git $PWD/autotune
+          git clone --branch remote_monitoring https://github.com/kruize/autotune.git $PWD/autotune
           cd autotune
           git rev-parse --short=7 HEAD > ../.commitsha
           cd ..

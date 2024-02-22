@@ -7,7 +7,7 @@ ADDITIONAL_TAGS="qa latest"
 AUTOTUNE_DOCKERFILE="Dockerfile.autotune"
 AUTOTUNE_GIT_DIR="autotune"
 AUTOTUNE_GIT_DIR_PATH="$PWD/$AUTOTUNE_GIT_DIR"
-AUTOTUNE_GIT_BRANCH="0.0.19"
+AUTOTUNE_GIT_BRANCH="remote_monitoring"
 
 if [[ -z "$QUAY_USER" || -z "$QUAY_TOKEN" ]]; then
     echo "QUAY_USER and QUAY_TOKEN must be set"

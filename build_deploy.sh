@@ -33,21 +33,21 @@ echo "job tmp dir location: $TMP_JOB_DIR"
 
 function job_cleanup() {
     echo "cleaning up job tmp dir: $TMP_JOB_DIR"
-    rm -fr $TMP_JOB_DIR
+    rm -fr "$TMP_JOB_DIR"
 }
 
 trap job_cleanup EXIT ERR SIGINT SIGTERM
 
-DOCKER_CONF="$TMP_JOB_DIR/.docker"
-mkdir -p "$DOCKER_CONF"
-docker --config="$DOCKER_CONF" login -u="$QUAY_USER" -p="$QUAY_TOKEN" quay.io
-docker --config="$DOCKER_CONF" login -u="$RH_REGISTRY_USER" -p="$RH_REGISTRY_TOKEN" registry.redhat.io
-docker --config="$DOCKER_CONF" build -t "${IMAGE_NAME}:${IMAGE_TAG}" -f ${AUTOTUNE_DOCKERFILE} .
-docker --config="$DOCKER_CONF" push "${IMAGE_NAME}:${IMAGE_TAG}"
+export DOCKER_CONFIG="$TMP_JOB_DIR/.docker"
+mkdir -p "$DOCKER_CONFIG"
+docker login -u="$QUAY_USER" --password-stdin quay.io <<< "$QUAY_TOKEN"
+docker login -u="$RH_REGISTRY_USER" --password-stdin  registry.redhat.io <<< "$RH_REGISTRY_TOKEN"
+docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" -f ${AUTOTUNE_DOCKERFILE} .
+docker push "${IMAGE_NAME}:${IMAGE_TAG}"
 
 for ADDITIONAL_TAG in $ADDITIONAL_TAGS; do
-    docker --config="$DOCKER_CONF" tag "${IMAGE_NAME}:${IMAGE_TAG}" "${IMAGE_NAME}:${ADDITIONAL_TAG}"
-    docker --config="$DOCKER_CONF" push "${IMAGE_NAME}:${ADDITIONAL_TAG}"
+    docker tag "${IMAGE_NAME}:${IMAGE_TAG}" "${IMAGE_NAME}:${ADDITIONAL_TAG}"
+    docker push "${IMAGE_NAME}:${ADDITIONAL_TAG}"
 done
 
 popd
